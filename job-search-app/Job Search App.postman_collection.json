@@ -1,0 +1,667 @@
+{
+	"info": {
+		"_postman_id": "1d81f807-f36a-4c99-982b-851a556dbe59",
+		"name": "Job Search App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32954776"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Mostafa\",\r\n    \"lastName\": \"Mah\",\r\n    \"email\": \"mostafax21@outlook.com\",\r\n    \"password\": \"Password123\",\r\n    \"recoveryEmail\": \"recovery2@example.com\",\r\n    \"DOB\": \"1990-01-01\",\r\n    \"mobileNumber\": \"1234567892\",\r\n    \"role\": \"User\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"email\": \"mostafamahmoud064@gmail.com\",\r\n    \"password\": \"password123\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"email\": \"mostafax21@outlook.com\",\r\n    \"password\": \"Password123\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/auth/verify-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjlhOTY0Nzg1YTlmNGRkZGU1NmYyYTUiLCJpYXQiOjE3MjE0MDcwNDcsImV4cCI6MTcyMTQxMDY0N30.PQwxUp_PkFEZcg5LrDCAO8CR3LpxEG6kjuaf5kY-QBw",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"verify-email"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjlhOTY0Nzg1YTlmNGRkZGU1NmYyYTUiLCJpYXQiOjE3MjE0MDcwNDcsImV4cCI6MTcyMTQxMDY0N30.PQwxUp_PkFEZcg5LrDCAO8CR3LpxEG6kjuaf5kY-QBw"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"email\": \"mostafax21@outlook.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"newPassword\": \"newpassword123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/reset-password?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWE5NjQ3ODVhOWY0ZGRkZTU2ZjJhNSIsImlhdCI6MTcyMTQwOTUwOCwiZXhwIjoxNzIxNDEzMTA4fQ.mvYYcy23f4BkxCLgfc8EWSiJy8Lj1Q0qCchhloL82P0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"reset-password"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWE5NjQ3ODVhOWY0ZGRkZTU2ZjJhNSIsImlhdCI6MTcyMTQwOTUwOCwiZXhwIjoxNzIxNDEzMTA4fQ.mvYYcy23f4BkxCLgfc8EWSiJy8Lj1Q0qCchhloL82P0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Add Company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWJjZDdiODhiZDIzYWI3ODRiNDA5YSIsImlhdCI6MTcyMTQ4Njg1NywiZXhwIjoxNzIxNDkwNDU3fQ.-XYfAmvi-yw561VF-GlJVO3qm0ycJiEj9w0n8QzCSWM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"companyName\": \"Tech Innovations 2.1\",\r\n  \"description\": \"A leading tech company specializing in software development.\",\r\n  \"industry\": \"Technology\",\r\n  \"address\": \"123 Tech Lane, Silicon Valley, CA\",\r\n  \"numberOfEmployees\": \"51-200\",\r\n  \"companyEmail\": \"contact3@techinnovations.com\",\r\n  \"companyHR\": \"669bcd7b88bd23ab784b409a\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/companies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Company",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWJjZDdiODhiZDIzYWI3ODRiNDA5YSIsImlhdCI6MTcyMTQ5NDg0OSwiZXhwIjoxNzIxNDk4NDQ5fQ.JSahXqx_nTRA7LarMdfQu5qwq-Y4IcsQZcRStV22yf0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"companyName\": \"Tech Innovations Updated\",\r\n  \"description\": \"A leading tech company specializing in innovative software development.\",\r\n  \"industry\": \"Technology\",\r\n  \"address\": \"456 Tech Avenue, Silicon Valley, CA\",\r\n  \"numberOfEmployees\": \"201-500\",\r\n  \"companyEmail\": \"info@techinnovations.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/companies/669bd949f5d90203cb00fa25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"companies",
+								"669bd949f5d90203cb00fa25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company By Id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Search for Company By Name",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Applications",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWJjZDdiODhiZDIzYWI3ODRiNDA5YSIsImlhdCI6MTcyMTU0NzU0MywiZXhwIjoxNzIxNTUxMTQzfQ.djSUuvQRCOVEgR1K0gbgoF_xkPbJmgUfPFAIjS3SCbU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/companies/669cb3cdc2e2fe8bec24c73f/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"companies",
+								"669cb3cdc2e2fe8bec24c73f",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Company",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/companies/669bd949f5d90203cb00fa25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"companies",
+								"669bd949f5d90203cb00fa25"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job",
+			"item": [
+				{
+					"name": "Add Job",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWJjZDdiODhiZDIzYWI3ODRiNDA5YSIsImlhdCI6MTcyMTQ5MTE1NywiZXhwIjoxNzIxNDk0NzU3fQ.Ag-Seg7gffCjrqvF3V1QNE3OGAfENPYBt5bTm12CeDA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"jobTitle\": \"Senior Software Engineer\",\r\n  \"jobLocation\": \"remote\",\r\n  \"workingTime\": \"full-time\",\r\n  \"seniorityLevel\": \"Senior\",\r\n  \"jobDescription\": \"Lead the development of innovative software solutions.\",\r\n  \"technicalSkills\": [\"Node.js\", \"TypeScript\", \"MongoDB\"],\r\n  \"softSkills\": [\"Teamwork\", \"Problem-solving\"]\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apply to Job",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWJjZDdiODhiZDIzYWI3ODRiNDA5YSIsImlhdCI6MTcyMTQ5MTE1NywiZXhwIjoxNzIxNDk0NzU3fQ.Ag-Seg7gffCjrqvF3V1QNE3OGAfENPYBt5bTm12CeDA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"jobTitle\": \"Senior Software Engineer\",\r\n  \"jobLocation\": \"remote\",\r\n  \"workingTime\": \"full-time\",\r\n  \"seniorityLevel\": \"Senior\",\r\n  \"jobDescription\": \"Lead the development of innovative software solutions.\",\r\n  \"technicalSkills\": [\"Node.js\", \"TypeScript\", \"MongoDB\"],\r\n  \"softSkills\": [\"Teamwork\", \"Problem-solving\"]\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Job",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWJjZDdiODhiZDIzYWI3ODRiNDA5YSIsImlhdCI6MTcyMTU0NTQyMiwiZXhwIjoxNzIxNTQ5MDIyfQ.cmclY4HLYJj0C4pd_bLPzhvDDo9h8bGRverCXOJTZ7w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTitle\": \"Senior NodeJs Developer\",\r\n    \"jobLocation\": \"onsite\",\r\n    \"workingTime\": \"part-time\",\r\n    \"seniorityLevel\": \"Senior\",\r\n    \"jobDescription\": \"Developing server-side logic, maintenance of the central database, ensuring high performance and responsiveness.\",\r\n    \"technicalSkills\": [\"Node.js\", \"Express.js\", \"MongoDB\", \"TypeScript\"],\r\n    \"softSkills\": [\"leadership\", \"time management\", \"team player\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/jobs/669cb3cdc2e2fe8bec24c73f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"jobs",
+								"669cb3cdc2e2fe8bec24c73f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Job",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWJjZDdiODhiZDIzYWI3ODRiNDA5YSIsImlhdCI6MTcyMTU0NTQyMiwiZXhwIjoxNzIxNTQ5MDIyfQ.cmclY4HLYJj0C4pd_bLPzhvDDo9h8bGRverCXOJTZ7w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/jobs/669cb3cdc2e2fe8bec24c73f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"jobs",
+								"669cb3cdc2e2fe8bec24c73f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Jobs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWJjZDdiODhiZDIzYWI3ODRiNDA5YSIsImlhdCI6MTcyMTU0NTQyMiwiZXhwIjoxNzIxNTQ5MDIyfQ.cmclY4HLYJj0C4pd_bLPzhvDDo9h8bGRverCXOJTZ7w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Jobs From a Company",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWJjZDdiODhiZDIzYWI3ODRiNDA5YSIsImlhdCI6MTcyMTUyODg4NCwiZXhwIjoxNzIxNTMyNDg0fQ.Fv-HmnyIWgy2F-M7uV-Kz3QolS9f0NXm9rQgwOI4Ztc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyId\": \"669bd949f5d90203cb00fa25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/companies/669bd949f5d90203cb00fa25/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"companies",
+								"669bd949f5d90203cb00fa25",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Jobs with Filters",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWJjZDdiODhiZDIzYWI3ODRiNDA5YSIsImlhdCI6MTcyMTU0NzU0MywiZXhwIjoxNzIxNTUxMTQzfQ.djSUuvQRCOVEgR1K0gbgoF_xkPbJmgUfPFAIjS3SCbU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyId\": \"669bd949f5d90203cb00fa25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/jobs/filter?workingTime=full-time",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"jobs",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "workingTime",
+									"value": "full-time"
+								},
+								{
+									"key": "jobLocation",
+									"value": "onsite",
+									"disabled": true
+								},
+								{
+									"key": "seniorityLevel",
+									"value": "Senior",
+									"disabled": true
+								},
+								{
+									"key": "jobTitle",
+									"value": "Developer",
+									"disabled": true
+								},
+								{
+									"key": "technicalSkills",
+									"value": "Node.js",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWE5NjQ3ODVhOWY0ZGRkZTU2ZjJhNSIsImlhdCI6MTcyMTU1MjY5OCwiZXhwIjoxNzIxNTU2Mjk4fQ.th7fibT-EQnUa7TrrYSgF15-8SI_i1rqtwZ4TAsMomM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/users/669a964785a9f4ddde56f2a5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"669a964785a9f4ddde56f2a5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWE5NjQ3ODVhOWY0ZGRkZTU2ZjJhNSIsImlhdCI6MTcyMTU1MjY5OCwiZXhwIjoxNzIxNTU2Mjk4fQ.th7fibT-EQnUa7TrrYSgF15-8SI_i1rqtwZ4TAsMomM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/users/669a964785a9f4ddde56f2a5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"669a964785a9f4ddde56f2a5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
